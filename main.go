@@ -53,7 +53,6 @@ func create_workerpool() {
 	var wg sync.WaitGroup
 	for i := 0; i < *pool_size; i++ {
 		wg.Add(1)
-		fmt.Println(i)
 		go worker(&wg)
 	}
 	sc := bufio.NewScanner(os.Stdin)
